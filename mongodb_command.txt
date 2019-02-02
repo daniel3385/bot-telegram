@@ -1,0 +1,14 @@
+systemctl start mongodb
+
+> use mydb
+switched to db mydb
+
+> db.createCollection('config')
+{ "ok" : 1 }
+
+> db.config.insert({token:'TELEGRAM-TOKEN'})
+WriteResult({ "nInserted" : 1 })
+
+> db.config.find()
+{ "_id" : ObjectId("5c55d8d60801a20015e64c9e"), "token" : "TELEGRAM_TOKEN" }
+
